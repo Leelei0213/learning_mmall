@@ -23,7 +23,9 @@ public class UserManageController {
 
     @RequestMapping(value = "login.do",method = RequestMethod.POST)
     public ServerResponse<User> login(String useranme, String password, HttpSession session) {
+
         ServerResponse<User> response = iUserService.login(useranme, password);
+
         if (response.isSuccess()) {
             User user = response.getData();
             if (user.getRole().equals(Const.Role.ROLE_ADMIN)) {

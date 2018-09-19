@@ -134,7 +134,7 @@ public class UserServiceImpl implements IUserService {
 
         String token = TokenCache.getKey(TokenCache.TOKEN_PREFIX + username);
         if (StringUtils.isBlank(token)) {
-            return ServerResponse.createByErrorMessage("token无效活着过期");
+            return ServerResponse.createByErrorMessage("token无效或者过期");
         }
 
         if (StringUtils.equals(forgetToken, token)) {

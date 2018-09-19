@@ -70,7 +70,7 @@ public class CategoryManageController {
         }
         if (iUserService.checkAdminRole(user).isSuccess()) {
 
-            //查询子节点的category信息，并且不递归，保持评级
+            //查询子节点的category信息，并且不递归，保持平级
             return iCategoryService.getChildrenParallelCategory(categoryId);
 
         } else {
